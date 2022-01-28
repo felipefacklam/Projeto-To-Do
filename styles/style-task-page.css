@@ -7,91 +7,155 @@
 }
 body#grid {
     display: grid;
+    background-color: rgb(41, 41, 41);
     height: 100vh;
-    width: 100vw;
-    grid-template-rows: 1fr 4fr;
-    grid-template-columns: 1fr 5fr;
-    grid-template-areas: "header aside"
-                        "header main"
+    max-width: 1500px;
+    margin: auto;
+    grid-template-rows: 1fr 6fr 1fr;
+    grid-template-columns: 1fr 7fr;
+    grid-template-areas: "aside header"
+                        "aside main"
+                        "aside footer"
                         
     ;
 }
 header {
-    background-color: black;
     grid-area: header;
-}
-aside {
-    background-color: violet;
-    grid-area: aside;
     display: flex;
     background-color: cadetblue;
     width: 100%;
-    height: 200px;
+    height: 150px;
     padding-left: 50px;
+    border-bottom: 4px solid white;
     align-items: center;
     justify-content: start;
 }
-main {
-    background-color: burlywood;
-    grid-area: main;
-    display: flex;
-    flex-direction: row;
-    padding-top: 100px;
-    justify-content: space-evenly;
-}
-header nav {
-    display: flex;
-    height: 70%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around ;
-}
-nav div.profile-pic {
-    background-color: cadetblue;
-    height: 120px;
-    width: 120px;
-    border-radius: 50%;
-    text-align: center;    
-}
-nav div.menu {
-    color: burlywood;
-}
-aside input {
+header input {
     border-style: none;
     border-bottom: 2px solid black;
     background-color: cadetblue;
-    font-size: 2em;    
+    font: bold 2em 'Outfit', sans-serif;   
 }
-.card {
-    background-color: white;
-    border-radius: 5px;
-    height:fit-content;
-    width: 200px;
-    padding: 10px 0;
-    justify-items: center;
+aside {
+    background-color: rgb(20, 20, 20);
+    grid-area: aside;
+    box-shadow:  rgb(0 0 0 / 30%) 6px 4px 17px 4px;
+    z-index: 1;
 }
-.card-titulo {
+aside nav {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    padding: 30px 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+aside nav div.profile img {
+    background-color: cadetblue;
+    height: 96px;
+    width: 96px;
+    border-radius: 50%;
+    border: 3px solid white;
+    padding: 10px;
+    text-align: center;    
+}
+aside nav div.profile p{
+    color: white;
+    padding: 10px;
     text-align: center;
+}
+aside nav div.menu {
+    color: #ece2d0;
+}
+aside nav h3 {
+    font-size: 1.2em;
+    padding-bottom: 10px;
+}
+aside nav div.config p a{
+    color: white;
+    font-size: .8em;
+    text-decoration: none;
+}
+div.config p a:hover {
     text-decoration: underline;
 }
-.card-items {
-    background-color: cadetblue;
+main {
+    background-color: #ece2d0;
+    grid-area: main;
+    display: flex;
+    flex-direction: row;
+    padding: 50px;
+    justify-content: space-evenly;
+}
+main .card {
+    background-color: hsl(39, 42%, 98%);
+    box-shadow: rgba(0, 0, 0, 0.300) 1px 1px 8px 0px;
+    border-radius: 10px;
+    height: auto;
+    width: 30%;
+    padding: 20px 10px;
+    justify-items: center;
+}
+main .card-titulo {
+    text-align: center;
+    font-variant: small-caps;
+    padding-bottom: 20px;
+}
+main .card-items {
+    color: black;
     width: auto;
-    height: 25px;
-    margin: 5px;
+    /* border: 1px solid #ece2d0; */
     border-radius: 4px;
-    padding: 3px;
+    margin: 10px;
+    padding: 10px;
+    font-weight: 700;
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.250);
 }
-#doing div {
-    background-color: rgb(32, 167, 27);
+main #doing div {
+    background-image: linear-gradient(to left, cadetblue, transparent);
 }
-#done div{
-    background-color: grey;
-    color: rgba(211, 211, 211, 0.418);
+main #done div{
+    background-color: cadetblue;
 }
-#urgente {
-    background-color: tomato;
+main #done div::before{
+    content: "✔️ ";
 }
-#prazo {
-    background-color: wheat;
+main #alta {
+    background-color: rgba(240, 45, 58, 0.800);
+}
+main #media {
+    background-color: #f6aa1c;
+}
+main #baixa {
+    background-color: rgba(5, 241, 64, 0.800);
+}
+main p#novo {
+    background-color: lightgray;
+    width: auto;
+    margin: 10px;
+    border-radius: 4px;
+    font-size: 2em;
+    text-align: center; 
+}
+footer {
+    background-color: #ece2d0;
+    grid-area: footer;
+    padding-left: 25px;
+}
+footer ul li {
+    list-style-position: inside;
+    float: left;
+    margin-left: 50px;
+}
+footer ul li.alta::marker {
+    color: rgba(240, 45, 58, 0.800);
+    font-size: 1.7em;
+}
+footer ul li.media::marker {
+    color: #f6aa1c;
+    font-size: 1.7em;
+}
+footer ul li.baixa::marker {
+    color: rgba(5, 241, 64, 0.800);
+    font-size: 1.7em;
 }
