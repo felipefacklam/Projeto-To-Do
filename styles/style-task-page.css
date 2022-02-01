@@ -142,20 +142,24 @@ footer {
     grid-area: footer;
     padding-left: 25px;
 }
+footer ul{ 
+    display: flex;
+    align-items: center;
+    padding: 0 0 20px 40px;
+}
 footer ul li {
     list-style-position: inside;
-    float: left;
     margin-left: 50px;
 }
 footer ul li.alta::marker {
     color: rgba(240, 45, 58, 0.800);
-    font-size: 1.7em;
+    font-size: 1.5em;
 }
 footer ul li.media::marker {
     color: #f6aa1c;
-    font-size: 1.7em;
+    font-size: 1.5em;
 }
 footer ul li.baixa::marker {
     color: rgba(5, 241, 64, 0.800);
-    font-size: 1.7em;
+    font-size: 1.5em;
 }
